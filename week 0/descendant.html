@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Style</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Descendent</title>
 
     <style>
-        #foo{
+        ul > li{
             color: blue;
-        }
-
-        .baz{
-            color: red;
         }
     </style>
 </head>
 <body>
-    
-    <h1 id="foo">Welcome to my web page!</h1>
-    Hello, world!
 
-    <h1 class="baz">This is a second heading</h1>
+    <ol>
+        <li>List item one</li>
+        <li>List item two</li>
+
+        <ul>
+            <li>sublist item one</li>
+            <li>sublist item two</li>
+        </ul>
+        <li>list item three</li>
+    </ol>
     
 </body>
 </html>

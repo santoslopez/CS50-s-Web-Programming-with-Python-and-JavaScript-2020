@@ -2,3 +2,7 @@
 ## Harvard University - by Brian Yu
 
 CS50's Web Programming with Python and JavaScript 2020
+
+### Lecture 0
+HTML, CSS, SCSS, Boostrap, Responsive site
+
