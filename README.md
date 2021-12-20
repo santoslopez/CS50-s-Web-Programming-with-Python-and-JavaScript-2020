@@ -16,5 +16,5 @@ y excepciones
 
 
 ### Lecture 3
-Django
+Django, layout, css
 

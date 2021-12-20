@@ -1,0 +1,15 @@
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+    <h1>Add Task</h1>
+    <form>
+        <input type="text" name="task">
+        <input type="submit">
+    </form>
+
+    <!-- tasks es el nombre que se puso en urls.py para identificar 
+    la app para que no haya problema al llamar index que se repite
+    con otras app-->
+    <a href="{% url 'tasks:index' %}">View tasks</a>
+
+{% endblock %}

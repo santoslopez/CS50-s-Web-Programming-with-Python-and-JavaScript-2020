@@ -13,6 +13,16 @@ def brian(request):
 def david(request):
     return HttpResponse("Hello, David!")
 
+#def greet(request,name):
+    #capitalize(): convierte de a letra Mayuscula la inicial
+#    return HttpResponse(f"Hello, {name.capitalize()}")
+
+# metodo equivalente al de arriva, solamente que se esta utilizando
+# una pagina
 def greet(request,name):
     #capitalize(): convierte de a letra Mayuscula la inicial
-    return HttpResponse(f"Hello, {name.capitalize()}")
+    return render(request,"hello/greet.html",
+        {
+            "name":name.capitalize()
+        }
+    )    
