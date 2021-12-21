@@ -16,5 +16,5 @@ y excepciones
 
 
 ### Lecture 3
-Django, layout, css
+Django, layout, css, sessions, ataques CSRF
 
