@@ -1,7 +1,9 @@
 from django.db import models
 
+#from airline.flights.views import flights
+
 # Create your models here.
-class Airoport(models.Model):
+class Airport(models.Model):
     code = models.CharField(max_length=3)
     city = models.CharField(max_length=64)
 
@@ -11,11 +13,23 @@ class Airoport(models.Model):
 
 class Flight(models.Model):
     #origin = models.CharField(max_length=64)
-    origin = models.ForeignKey(Airoport,on_delete=models.CASCADE)
-    destination = models.CharField(max_length=64)
+    origin = models.ForeignKey(Airport,on_delete=models.CASCADE,related_name="departures")
+    destination = models.ForeignKey(Airport,on_delete=models.CASCADE,related_name="arrivals")
+   
+    #destination = models.CharField(max_length=64)
     duration = models.IntegerField()
 
     # return string representation of the object
     # cuando se invoca flights ya no devuelve un entero sino esto
     def __str__(self):
         return f"{self.id}: {self.origin}: to {self.destination}"
+
+
+class Passenger(models.Model):
+    first = models.CharField(max_length=64)
+    last = models.CharField(max_length=64)
+    flight = models.ManyToManyField(Flight,blank=True,related_name="passengers")
+
+    #string representation
+    def __str__(self):
+        return f"{self.first} {self.last}"
